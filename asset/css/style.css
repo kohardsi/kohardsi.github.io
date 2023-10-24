@@ -6,7 +6,7 @@ html{font-size:105%}
 /* ========================= */
 @media screen and (max-width:992px){.navbar-collapse.show{background-color:#383a3b;padding:15px;border-radius:3px}.collapsing{transition:none!important}}
 @media screen and (max-width:375px){.navbar-brand > span{display:none}}
-
+.hero .text{height:70px}
 /* ========================= */
 svg.i_kohardsi{position:relative;z-index:1;width:30px;height:30px}
 .hero svg.icon-kohar{animation-name:example;animation-duration:5s;animation-iteration-count:infinite;animation-direction:alternate}
