@@ -62,12 +62,12 @@ class TextScramble {
 
 const phrases = [
   "Teja Sukmana,",
-  "hobi rebahan",
-  "tapi pengen sukses",
-  "astaghfirullah al azim",
-  "sadar boozz sadar",
-  "umur ges kolot",
-  "gera benhar angguran"
+  "penasaran",
+  "cari tau",
+  "pelajari",
+  "bisa ga bisa",
+  "udah di lakuin",
+  "Loading......"
 ];
 
 const el = document.querySelector(".text");
