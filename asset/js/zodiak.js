@@ -3,7 +3,7 @@ function birthDate(){
   var month=document.getElementById("month").value;
   var day=document.getElementById("day").value;
   var animals=["monkey", "rooster", "dog", "pig", "rat", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "goat"];
-  var stars=["an Aries", "a Taurus", "a Gemini", "a Cancer", "a Leo", "a Virgo", "a Libra", "a Scorpio", "a Sagittarius", "a Capricorn", "an Aquarius", "a Pisces"];
+  var stars=["an <strong class='text-info'>Aries</strong>", "a <strong class='text-info'>Taurus</strong>", "a <strong class='text-info'>Gemini</strong>", "a <strong class='text-info'>Cancer</strong>", "a <strong class='text-info'>Leo</strong>", "a <strong class='text-info'>Virgo</strong>", "a <strong class='text-info'>Libra</strong>", "a <strong class='text-info'>Scorpio</strong>", "a <strong class='text-info'>Sagittarius</strong>", "a <strong class='text-info'>Capricorn</strong>", "an <strong class='text-info'>Aquarius</strong>", "a <strong class='text-info'>Pisces</strong>"];
   var numbers=[0,1,2,3,4,5,6,7,8,9,10,11];
   var rotation=[225,195,165,135,105,75,45,15,345,315,285,255];
   var degree;
@@ -70,7 +70,7 @@ function birthDate(){
     url='https://cdn0.iconfinder.com/data/icons/astronomical-signs/16/Pisces_zodiac_sign_symbol_horoscope_astrology-64.png';
   }
   
-  document.getElementById("display").innerHTML="You are "+star+" born in the year of "+animal;
+  document.getElementById("display").innerHTML="You are "+star+" born in the year of <strong class='text-warning'>"+animal+"</strong>";
   document.getElementById("zodiac").src=url;
   element.style.webkitTransform="rotate("+degree+"deg)";
   element.style.transform="rotate("+degree+"deg)";
