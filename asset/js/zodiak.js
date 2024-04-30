@@ -69,7 +69,11 @@ function birthDate(){
   star=stars[11];
     url='https://cdn0.iconfinder.com/data/icons/astronomical-signs/16/Pisces_zodiac_sign_symbol_horoscope_astrology-64.png';
   }
-  
+   else { 
+      star=["<strong class='text-danger'>underfined</strong>"];
+       url='https://lh3.googleusercontent.com/-yLKxmqii2X8/ZTcpMU1pVtI/AAAAAAAAAAM/JwPtbegWa3QpSeOzyS5r7-vsTo21tYqiACNcBGAsYHQ/s114/KOHARD.png';
+  }
+
   document.getElementById("display").innerHTML="You are "+star+" born in the year of <strong class='text-warning'>"+animal+"</strong>";
   document.getElementById("zodiac").src=url;
   element.style.webkitTransform="rotate("+degree+"deg)";
