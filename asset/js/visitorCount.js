@@ -9,64 +9,52 @@
  };
  firebase.initializeApp(firebaseConfig);
 
-        $(document).ready(function() {
-            var pageId = getPageIdFromDocumentTitle();
+$(document).ready(function() {
+    var pageId = getPageIdFromDocumentTitle();
+    
+    // Memeriksa apakah pengguna telah memberikan suka sebelumnya menggunakan localStorage
+    var likedBefore = localStorage.getItem(pageId + '_liked');
+    if (likedBefore) {
+        $('#like-button').prop("disabled", true); // Menonaktifkan tombol suka jika pengguna telah memberikan suka sebelumnya
+    }
 
+    if (pageId) {
+        var viewStats = firebase.database().ref("pages/id/" + pageId + "/views");
+        var likeStatsRef = firebase.database().ref("pages/id/" + pageId + "/likes");
 
-            // Mengecek status autentikasi pengguna
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    // Jika pengguna terautentikasi, periksa apakah sudah memberi suka pada halaman ini sebelumnya
-                    var likedPagesRef = firebase.database().ref("likedPages/" + user.uid);
-                    likedPagesRef.child(pageId).once("value").then(function(snapshot) {
-                        if (snapshot.exists()) {
-                            // Jika pengguna sudah memberi suka, nonaktifkan tombol "Like"
-                            $('#like-button').prop("disabled", true);
-                        }
+        viewStats.once('value').then(function(snapshot) {
+            var viewCount = snapshot.val() || 0;
+            $('#view').text(viewCount);
+            viewStats.set(viewCount + 1);
+        }).catch(function(error) {
+            console.error("Error getting view count: ", error);
+        });
+
+        likeStatsRef.once('value').then(function(snapshot) {
+            var likeCount = snapshot.val() || 0;
+            $('#like').text(likeCount);
+
+            $('#like-button').on('click', function() {
+                // Memeriksa apakah pengguna telah memberikan suka sebelumnya menggunakan localStorage
+                var likedBefore = localStorage.getItem(pageId + '_liked');
+                if (!likedBefore) { // Jika belum memberikan suka sebelumnya
+                    likeStatsRef.transaction(function(likes) {
+                        return (likes || 0) + 1;
+                    }).then(function() {
+                        $('#like-button').prop("disabled", true); // Menonaktifkan tombol suka setelah memberikan suka
+                        // Menyimpan status suka pengguna ke localStorage
+                        localStorage.setItem(pageId + '_liked', true);
+                    }).catch(function(error) {
+                        console.error("Error updating like count: ", error);
                     });
                 }
             });
-
-
-            if (pageId) {
-                var viewStats = firebase.database().ref("pages/id/" + pageId + "/views");
-                var likeStatsRef = firebase.database().ref("pages/id/" + pageId + "/likes");
-
-                viewStats.once('value').then(function(snapshot) {
-                    var viewCount = snapshot.val() || 0;
-                    $('#view').text(viewCount);
-                    viewStats.set(viewCount + 1);
-                }).catch(function(error) {
-                    console.error("Error getting view count: ", error);
-                });
-
-                likeStatsRef.once('value').then(function(snapshot) {
-                    var likeCount = snapshot.val() || 0;
-                    $('#like').text(likeCount);
-
-                    $('#like-button').on('click', function() {
-                        firebase.auth().onAuthStateChanged(function(user) {
-                            if (user) {
-                                // Tandai halaman ini sebagai disukai oleh pengguna
-                                var likedPagesRef = firebase.database().ref("likedPages/" + user.uid);
-                                likedPagesRef.child(pageId).set(true);
-                                likeStatsRef.transaction(function(likes) {
-                                    return (likes || 0) + 1;
-                                }).then(function() {
-                                    $('#like-button').prop("disabled", true);
-                                }).catch(function(error) {
-                                    console.error("Error updating like count: ", error);
-                                });
-                            } else {
-                                console.log("Pengguna belum login.");
-                            }
-                        });
-                    });
-                }).catch(function(error) {
-                    console.error("Error getting like count: ", error);
-                });
-            }
+        }).catch(function(error) {
+            console.error("Error getting like count: ", error);
         });
+    }
+});
+
 
         function getPageIdFromDocumentTitle() {
             return document.title.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
