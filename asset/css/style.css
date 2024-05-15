@@ -27,3 +27,5 @@ input[type=number]{-moz-appearance:textfield}
 img#zodiac {max-width:100px}
 /*qr*/
 .qr-code{animation-name: genere;animation-duration: 1s;}.qr-code.genere{animation-name: genere1}@keyframes genere {0%   {opacity:0}25%  {opacity:0.5}50%  {opacity:0.7}100% {opacity:1}}@keyframes genere1 {0%   {opacity:0}25%  {opacity:0.5}50%  {opacity:0.7}100% {opacity:1}}
+
+#visitorCount{position: fixed;bottom:2%;right: 2%;}}
