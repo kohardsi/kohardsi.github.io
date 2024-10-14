@@ -1,0 +1,313 @@
+:root {
+  --baby-powder: #fdfff7;
+  --gold-rush: #f9c97c;
+  --orange: #f59300;
+  --orange-light: #ffa51f;
+  --brown: #8b4218;
+  --champagne-problems: #fdf6ea;
+  --onyx: #fafafa;
+  --xanadu: #757761;
+  --gray: #a3a7b8;
+  --light-gray: #cecccc;
+  --dark-gray: #646773;
+  --font-title: "Big Shoulders Inline Display", cursive;
+  --font-cursive: "Newsreader", sans-serif;
+  --font-text: "Josefin Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: 1.3rem;
+  color: var(--onyx);
+  font-weight: 300;
+  line-height: 1.25;
+  background: var(--champagne-problems);
+
+}
+.engagement {
+    font-family: 'Engagement', cursive;
+}
+.decoratif{
+    font-family: 'Cinzel Decorative', serif;
+}
+/* Styling untuk elemen desktop */
+.desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #f8f9fa; /* Contoh background */
+    z-index: 1000;
+    overflow-y: hidden; /* Agar bisa di-scroll jika kontennya panjang */
+}
+.desktop {
+    background: url(../public/assets/img/desktop_hero.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bottom-center-element {
+    position: absolute;
+    bottom:0; /* Jarak dari bawah */
+    left: 50%;
+    transform: translateX(-50%); /* Pusatkan elemen secara horizontal */
+}
+.glass-blur {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.glass-blur:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.glass-blur p,.text-shadow {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling untuk elemen mobile */
+.mobile {
+    margin-left: auto; /* Memastikan elemen mobile berada di sebelah kanan */
+    overflow-y: auto;
+}
+
+/* Media Query untuk lebar layar di bawah 690px */
+@media (max-width: 690px) {
+    .desktop {
+        display: none; /* Sembunyikan elemen desktop */
+    }
+    .mobile {
+        width: 100%; /* Tampilkan elemen mobile dengan lebar penuh */
+        margin-left: 0;
+    }
+}
+
+/* Media Query untuk lebar layar antara 690px hingga 999px */
+@media (min-width: 690px) and (max-width: 999px) {
+    .desktop {
+        width: 55%; /* Lebar elemen desktop lebih kecil */
+    }
+    .mobile {
+        width: 45%; /* Lebar elemen mobile di layar sedang */
+        margin-left: 55%; /* Geser elemen mobile ke samping elemen desktop */
+    }
+}
+
+/* Media Query untuk lebar layar di atas 999px */
+@media (min-width: 1000px) {
+    .desktop {
+        width: 75%; /* Lebar elemen desktop lebih besar di layar besar */
+    }
+    .mobile {
+        width: 25%; /* Lebar elemen mobile tetap lebih kecil */
+        margin-left: 75%; /* Geser elemen mobile ke samping elemen desktop */
+        
+    }
+}
+
+
+.mobile-screen {
+    max-width: 450px;
+    margin:0 auto;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+.mobile-background {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+    background: var(--baby-powder);
+    position: relative;
+}
+.mobile-background.flowers {
+    background-image: url(https://assets.codepen.io/567707/evermore-splash.jpg);
+    background-size: cover;
+}
+.mobile-background.plain {
+    background-image: url(https://assets.codepen.io/567707/evermore-background.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+
+
+
+/*WAVE*/
+.box {
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 30px rgba(black, .2);
+  background: lighten(#f0f4c3, 10%);
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave {
+  opacity: .4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 300px;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .4em;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(black, .1);
+  text-indent: .3em;
+}
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+/* Mengatur elemen .my-section agar tampil berdampingan */
+.my-section {
+    display: flex;
+    flex-wrap: wrap; /* Membungkus elemen saat tidak ada cukup ruang */
+    height: 100vh;
+}
+
+section.sec-hero {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.mobile section{
+  min-height: 100vh;
+    box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, 0.45);
+}
+.b-gradient{
+    background-color: transparent;
+    background-image: linear-gradient(0deg, #100B0700 0%, #100b0769 100%);
+}
+.t-gradient{
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #100B0700 0%, #100b0769 100%);
+}
+.col-clear{width: 100vw}
+.carousel-item {
+    display: block !important;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.owl-stage {
+    padding-left: 0 !important;
+}
+
+.parallax {
+    background-attachment: fixed; /* This is key for the parallax effect */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Cover the entire div area */
+}
+
+
+
+
+@property --s {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+
+img.b-fancy {
+  --t: 3px;  /* control the thickness (corner = 3*edge) */
+  --s: 40px; /* control the size of the corners (that also affect the size of the edges) */
+  --g: 8px;  /* control the gap */
+  --c: #212529;
+  
+  padding: calc(2*var(--t) + var(--g));
+  border: var(--t) solid #0000;
+  background:
+    conic-gradient(at var(--s) calc(3*var(--t)),#0000 75%,var(--c) 0)
+     0 0/calc(100% - var(--s)) calc(100% - 3*var(--t)) border-box,
+    conic-gradient(at calc(3*var(--t)) var(--s),#0000 75%,var(--c) 0)
+     0 0/calc(100% - 3*var(--t)) calc(100% - var(--s)) border-box,
+    linear-gradient(  0deg,var(--c) calc(2*var(--t)),#0000 0) 
+      50% var(--t)/calc(100% - 2*(var(--s) + var(--g))) 100% 
+      repeat-y padding-box,
+    linear-gradient(-90deg,var(--c) calc(2*var(--t)),#0000 0) 
+      var(--t) 50%/100% calc(100% - 2*(var(--s) + var(--g))) 
+      repeat-x padding-box;
+  transition: --s .5s;
+  cursor: pointer;
+}
+img.b-fancy:hover {
+   --s: 80px;
+}
+
+div#stickyDiv {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+
+.musik {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 5px;
+    scale: 0.6;
+}
+audio#myAudio {
+    position: relative;
+    left: -11px;
+    bottom: 12px;
+}
