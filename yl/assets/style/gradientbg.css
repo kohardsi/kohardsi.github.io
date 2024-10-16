@@ -177,7 +177,7 @@
     left: calc(50% - var(--circle-size));
 
     transform-origin: calc(50% - 800px) calc(50% + 200px);
-    animation: moveInCircle 20s ease infinite;
+    animation: moveInCircle 15s ease infinite;
 
     opacity: 1;
   }

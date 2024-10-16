@@ -1,0 +1,23 @@
+.parallax {
+    position: fixed; /* Fix the background */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh; /* Full height */
+    overflow: hidden;
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    transition: background-image 1s ease-in-out, transform 1.5s ease-in-out, opacity 1s ease-in-out; /* Smooth transition with opacity */
+    z-index: -1; /* Behind the content */
+    opacity: 0; /* Start with opacity 0 */
+}
+
+.parallax.fade-in {
+    opacity: 1; /* Set opacity to 1 when class 'fade-in' is added */
+    transform: opacity 1.5s ease-in-out;
+}
+@media screen and (min-width:700px){
+    .parallax{
+        left: 75%;
+    }
+}

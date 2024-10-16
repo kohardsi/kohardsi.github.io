@@ -1,3 +1,4 @@
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const interBubble = document.querySelector(".interactive");
   let curX = 0;
@@ -6,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let tgY = 0;
 
   const move = () => {
-    curX += (tgX - curX) / 200;
-    curY += (tgY - curY) / 200;
+    curX += (tgX - curX) / 10;
+    curY += (tgY - curY) / 10;
     interBubble.style.transform = `translate(${Math.round(
       curX
     )}px, ${Math.round(curY)}px)`;
@@ -21,3 +22,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   move();
 });
+*/

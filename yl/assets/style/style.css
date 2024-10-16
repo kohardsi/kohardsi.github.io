@@ -25,7 +25,7 @@ body {
   color: var(--onyx);
   font-weight: 300;
   line-height: 1.25;
-  background: var(--champagne-problems);
+  background: var(--bs-dark);
 
 }
 .engagement {
@@ -45,7 +45,7 @@ body {
     overflow-y: hidden; /* Agar bisa di-scroll jika kontennya panjang */
 }
 .desktop {
-    background: url(../public/assets/img/desktop_hero.jpeg);
+    background: url(../img/desktop_hero.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

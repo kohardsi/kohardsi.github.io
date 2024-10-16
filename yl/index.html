@@ -4,18 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Online</title>
+  <title>Teja & Yuly</title>
+  <meta name="description" content="The Weeding Of Teja Dan Yuly">
+  <meta name="author" content="Teja & Yuly">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../style/style.css">
-  <link rel="stylesheet" href="../style/owl.carousel.css">
-  <link rel="stylesheet" href="../style/animated.css">
-  <link rel="stylesheet" href="../style/parallax.css">
-  <link rel="stylesheet" href="../style/gradientbg.css">
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+  <link rel="stylesheet" href="assets/style/owl.carousel.css">
+  <link rel="stylesheet" href="assets/style/animated.css">
+  <link rel="stylesheet" href="assets/style/parallax.css">
+  <link rel="stylesheet" href="assets/style/gradientbg.css">
+  <link rel="stylesheet" href="assets/style/bubble.css">
+  <link rel="stylesheet" href="assets/style/gallery.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Engagement&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -24,7 +31,7 @@
 
       <div class="col-lg-8 col-md-7 desktop">
         <!--HERO DESKTOP-->
-        <section>
+        <section class="lazy-element">
           <div class="bottom-center-element w-50">
             <div class="glass-blur card rounded-5 rounded-bottom-0 animatable moveUp">
               <div class="card-body text-center">
@@ -42,15 +49,18 @@
         <div class="col-lg-8 col-md-7 desktop"></div>
         <div class="col-lg-4 col-md-5 col-12 mobile p-0 text-center">
           <div class="musik">
-            <audio controls id="myAudio"><source src="https://kunika.id/wp-content/uploads/2024/06/I-Wanna-Grow-Old-with-You-Westlife.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            <audio controls id="myAudio">
+              <source src="https://kunika.id/wp-content/uploads/2024/06/I-Wanna-Grow-Old-with-You-Westlife.mp3" type="audio/mpeg">Your browser does not support the audio element.
+            </audio>
           </div>
         </div>
       </div>
       <!--MOBILE V-->
-      <div class="col-lg-4 col-md-5 col-12 mobile p-0">
+      <div id='mobile' class="col-lg-4 col-md-5 col-12 mobile p-0">
+        <div class="bubbles"></div>
         <div class="parallax" id="parallax"></div>
         <!--HERO MOBILE-->
-        <section id='mobile-hero' class="sec-hero text-center position-relative bg-dark bg-opacity-75">
+        <section id='mobile-hero' class="sec-hero text-center position-relative bg-dark bg-opacity-75 lazy-element">
           <div class="m-title position-absolute top-0 w-100 pt-5 b-gradient decoratif animatable fadeInDown">
             <div class="g-0 row row-cols-2">
               <div>
@@ -68,7 +78,7 @@
               </div>
             </div>
           </div>
-          <div class="t-gradient position-absolute bottom-0 start-0 w-100 pb-5">
+          <div class="t-gradient position-absolute z-3 bottom-0 start-0 w-100 pb-5">
             <div class="animatable" data-animation="fadeInUp">
               <p>to</p>
               <p class="fs-3 guest-name decoratif">Tamu Undangan</p>
@@ -79,7 +89,7 @@
         </section>
 
         <!--DATE-->
-        <section id='DATE' class="sec-date text-center position-relative">
+        <section id='DATE' class="sec-date text-center position-relative lazy-element">
           <div class="item-date position-relative">
             <div class="position-absolute z-1 w-100 pt-5 b-gradient">
               <div class="animatable" data-animation="fadeInDown">
@@ -106,14 +116,14 @@
                   <div class="label">Detik</div>
                 </li>
               </ul>
-              <div class="row g-0 text-shadow animatable" data-animation="fadeInUp">
+              <div id='myDaxte' class="row g-0 text-shadow animatable" data-animation="fadeInUp">
                 <div class="col-6 text-end px-2 animatable" data-animation="bounceInLeft">
-                  <div class="">Sabtu</div>
-                  <div class="engagement fs-1">14</div>
+                  <div class="mYhari">Sabtu</div>
+                  <div class="mYtanggal engagement fs-1">14</div>
                 </div>
                 <div class="ps-2 col-6 text-start border-start border-2 animatable" data-animation="bounceInRight">
-                  <div>Februari</div>
-                  <div>2025</div>
+                  <div class="mYbulan">Februari</div>
+                  <div class="mYtahun">2025</div>
                 </div>
               </div>
             </div>
@@ -126,24 +136,24 @@
         </section>
 
         <!--MEMPELAI-->
-        <section id='deferred' class="sec-tejyul text-center position-relative p-4">
+        <section class="sec-tejyul text-center position-relative p-4 lazy-element">
           <div class="pt-5 my-5">
-            <div class="glass-blur card rounded-5 my-4 animatable bounceInRight">
+            <div class="glass-blur card rounded-5 my-4 animatable fadeInDown animationDelay">
               <div class="card-body text-center">
                 <p class="fs-5">Assalamualaikum Wr. Wb.</p>
                 <p class="fs-6">Dengan memohon rahmat dan ridho Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan. Kami bermaksud mengundang Bapak/ibu/sdr/i dalam acara pernikahan kami</p>
               </div>
             </div>
           </div>
-          <div class="glass-blur card rounded-5 mb-4 animatable bounceInLeft">
+          <div class="glass-blur card rounded-5 mb-4 animatable fadeInUp animationDelay">
             <div class="card-body text-center">
-              <img src="assets/img/profil/mempelai_pria.jpg" class="card-img-top rounded-0 b-fancy w-75 animatable moveUp" alt="...">
+              <img src="assets/img/profil/mempelai_pria.jpg" class="z-2 card-img-top rounded-0 b-fancy w-75 animatable moveUp" alt="...">
               <p class="fs-5 pt-3 animatable bounceIn decoratif">Teja Sukmana</p>
-              <p class="fs-6 animatable moveUp">Putra Pertama Bapak Sule <br />&<br /> Ibu Lina Jubaedah</p>
+              <p class="fs-6 animatable moveUp">Putra Pertama Bapak _____ <br />&<br /> Ibu ____-</p>
               <br /><br />
-              <img src="assets/img/profil/mempelai_wanita.jpg" class="card-img-top rounded-0 b-fancy w-75 animatable moveUp" alt="...">
+              <img src="assets/img/profil/mempelai_wanita.jpg" class="z-2 card-img-top rounded-0 b-fancy w-75 animatable moveUp" alt="...">
               <p class="fs-5 pt-3 animatable bounceIn decoratif">Yuly Roudhotul Hasanah</p>
-              <p class="fs-6 animatable moveUp">Putra Pertama Bapak Sule <br />&<br /> Ibu Lina Jubaedah</p>
+              <p class="fs-6 animatable moveUp">Putra Pertama Bapak _____ <br />&<br /> Ibu ____-</p>
             </div>
           </div>
           <div class="gradient-bg">
@@ -175,96 +185,68 @@
         </section>
 
         <!--RESEPSI-->
-        <section id='deferred' class="sec-acara text-center position-relative p-4">
+        <section class="sec-acara text-center position-relative p-4 lazy-element">
           <div class="pt-5 my-5"><br><br><br>
-            <div class="glass-blur card rounded-5 my-4 animatable bounceInLeft">
+            <div class="glass-blur card rounded-5 my-4 animatable fadeInUp animationDelay">
               <div class="card-body text-center">
                 <div class="row row-cols-1">
-                  <p class="fs-1 border-bottom decoratif fw-bold">Akad Nikah</p>
-                  <p class="fs-5">SABTU</p>
-                  <p class="fs-1 engagement">22</p>
-                  <p class="fs-5 border-bottom">FEBRUARI 2025</p>
-                  <p class="fs-5">06:00 WIB</p>
-                  <p class="fs-5">- SELESAI</p>
-                  <p class="fs-6">Jl. Raya Kunir</p>
-                  <p class="fs-5"><a href="#">GOOGLE MAP</a></p>
+                  <p class="fs-1 border-bottom border-3 decoratif fw-bold animatable fadeInUp animationDelay">Akad Nikah</p>
+                  <h3 class="fs-5 animatable fadeInUp animationDelay mYhari">SABTU</h3>
+                  <h1 class="display-1 engagement animatable fadeInUp animationDelay mYtanggal">22</h1>
+                  <p class="fs-5 animatable fadeInUp animationDelay"><span class="border-bottom"><span class="mYbulan">FEBRUARI</span> <span class="mYtahun">2025</span></span></p>
+                  <p class="fs-5 animatable fadeInUp animationDelay"><b>06:00 WIB</b> - Selesais</p>
+                  <p class="fs-2 decoratif fw-bold pt-5"><span class="border-bottom border-2 pb-1 animatable fadeInUp animationDelay">Resepsi</span></p>
+                  <p class="fs-5 animatable fadeInUp animationDelay"><b>01:00 WIB</b> - Selesais</p>
+                  <p class="fs-2 decoratif fw-bold pt-5"><span class="border-bottom border-2 pb-1 animatable fadeInUp animationDelay">Temu Manten</span></p>
+                  <p class="fs-5 pb-5 animatable fadeInUp animationDelay"><b>06:00 WIB</b> - SELESAI</p>
+                  <p class="fs-6 animatable fadeInUp animationDelay">Jl. Raya Kunir</p>
+                  <p class="fs-5 animatable fadeInUp animationDelay"><a href="#">GOOGLE MAP</a></p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass-blur card rounded-5 mb-4 animatable bounceInRight">
-            <div class="card-body text-center">
-              <div class="row row-cols-1">
-                <p class="fs-1 border-bottom decoratif fw-bold">Resepsi</p>
-                <p class="fs-5">SABTU</p>
-                <p class="fs-1 engagement">22</p>
-                <p class="fs-5 border-bottom">FEBRUARI 2025</p>
-                <p class="fs-5">01:00 WIB</p>
-                <p class="fs-5">- SELESAI</p>
-                <p class="fs-6">Jl. Raya Kunir</p>
-                <p class="fs-5"><a href="#">GOOGLE MAP</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass-blur card rounded-5 mb-4 animatable moveUp">
-            <div class="card-body text-center">
-              <div class="row row-cols-1">
-                <p class="fs-1 border-bottom decoratif fw-bold">Temu Manten</p>
-                <p class="fs-5">SABTU</p>
-                <p class="fs-1 engagement">22</p>
-                <p class="fs-5 border-bottom">FEBRUARI 2025</p>
-                <p class="fs-5">06:00 WIB</p>
-                <p class="fs-5">- SELESAI</p>
-                <p class="fs-6">Jl. Raya Kunir</p>
-                <p class="fs-5"><a href="#">GOOGLE MAP</a></p>
               </div>
             </div>
           </div>
         </section>
 
         <!--GALLERY-->
-        <section id='deferred' class="sec-gallery">
-          <link rel="stylesheet" type="text/css" href="../style/gallery.css">
+        <section class="sec-gallery lazy-element">
           <div class="gallery-slider">
             <ul class='slider m-0 p-0'>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (1).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (1).jpeg')">
                 <div class='content'>
                   <p class='description'> Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                     praesentium nisi. Id laboriosam ipsam enim. </p>
                 </div>
               </li>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (2).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (2).jpeg')">
                 <div class='content'>
                   <p class='description'> Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                     praesentium nisi. Id laboriosam ipsam enim. </p>
                 </div>
               </li>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (3).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (3).jpeg')">
                 <div class='content'>
                   <p class='description'> Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                     praesentium nisi. Id laboriosam ipsam enim. </p>
                 </div>
               </li>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (4).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (4).jpeg')">
                 <div class='content'>
                   <p class='description'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
                   </p>
                 </div>
               </li>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (5).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (5).jpeg')">
                 <div class='content'>
                   <p class='description'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
                   </p>
                 </div>
               </li>
-              <li class='item' style="background-image: url('./assets/img/gallery/gallery (6).jpeg')">
+              <li class='item' style="background-image: url('assets/img/gallery/gallery (6).jpeg')">
                 <div class='content'>
                   <p class='description'> Lorem ipsum, dolor sit amet consectetur
                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
@@ -280,14 +262,56 @@
 
           <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
           <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-          <script type="text/javascript" src="../scripts/galley.js"></script>
+          <script type="text/javascript" src="assets/scripts/galley.js"></script>
+        </section>
+
+        <!--GIFT-->
+        <section class="sec-gift text-center position-relative p-4 lazy-element z-3">
+          <div class="pt-5 my-5">
+            <div class="glass-blur card rounded-5 my-4 animatable fadeInUp animationDelay">
+              <div class="card-body text-center">
+                <p class="fs-1 decoratif animatable fadeInUp animationDelay">Wedding Gift</p>
+                <div class="row row-cols-1">
+                  <i class="display-1 bi bi-gift-fill p-3 animatable fadeInUp animationDelay"></i>
+                  <p class="fs-6 animatable fadeInUp animationDelay">Lapangan Karapan Sapi Ds.Jatirejo Kec.Kunir, Kab.Lumajang, Jawa Timur</p>
+                  <p class="fs-6 animatable fadeInUp animationDelay">to : Yuly Haji Puha</p>
+                  <p class="fs-6 fw-bold animatable fadeInUp animationDelay">Phone : 0853-9200-4297</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-blur card rounded-5 my-4 animatable fadeInUp animationDelay">
+              <img src="assets/img/gift/bank_mandiri.svg" class="card-img-top display-5 px-5 animatable fadeInUp animationDelay" alt="...">
+              <div class="card-body text-center pb-0">
+                <div class="row row-cols-1">
+                  <p class="fs-6 fw-bold animatable fadeInUp animationDelay">0853-9200-4297</p>
+                  <p class="fs-6 animatable fadeInUp animationDelay">Yuly Haji Puha</p>
+                </div>
+              </div>
+            </div>
+            <div class="glass-blur card rounded-5 my-4 animatable fadeInUp animationDelay">
+              <img src="assets/img/gift/bank_bca.svg" class="card-img-top display-5 px-5 animatable fadeInUp animationDelay" alt="...">
+              <div class="card-body text-center pb-0">
+                <div class="row row-cols-1">
+                  <p class="fs-6 fw-bold animatable fadeInUp animationDelay">0853-9200-4297</p>
+                  <p class="fs-6 animatable fadeInUp animationDelay">Yuly Haji Puha</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </section>
       </div>
       <div class="col-clear" />
     </div>
   </div>
 
-
+  <ul id="image-list" style="display:none;">
+    <li data-image="assets/img/sec_mempelai/mempelai (1).jpeg"></li>
+    <li data-image="assets/img/sec_mempelai/mempelai (2).jpeg"></li>
+    <li data-image="assets/img/sec_mempelai/mempelai (3).jpeg"></li>
+    <li data-image="assets/img/sec_mempelai/mempelai (4).jpeg"></li>
+  </ul>
 
   <!--MODAL-->
   <!-- Vertically centered modal -->
@@ -299,77 +323,81 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-                <p>Kepada Yth</p>
-                <p class="fs-3 guest-name decoratif">Tamu Undangan</p>
-                <p class="card-text fs-6">Tidak ada yang lebih kami harapkan dibanding doa restu dan kedatangan Bapak/Ibu/Saudara/i.</p>
-                <p>Hormat Kami</p>
-                <p class="fs-3 decoratif">Teja & Yily</p>
+          <p>Kepada Yth</p>
+          <p class="fs-3 guest-name decoratif">Tamu Undangan</p>
+          <p class="card-text fs-6">Tidak ada yang lebih kami harapkan dibanding doa restu dan kedatangan Bapak/Ibu/Saudara/i.</p>
+          <p>Hormat Kami</p>
+          <p class="fs-3 decoratif">Teja & Yily</p>
         </div>
       </div>
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../scripts/app.js"></script>
-  <script src="../scripts/javas.js"></script>
-  <script src="../scripts/count.js"></script>
-  <script src="../scripts/owl.carousel.js"></script>
-  <script src="../scripts/animated.js"></script>
+  <script>
+    window.onload = function() {
+      var script1 = document.createElement('script');
+      script1.src = 'assets/scripts/javas.js';
+      document.body.appendChild(script1);
+
+      var script2 = document.createElement('script');
+      script2.src = 'assets/scripts/bubcble.js';
+      document.body.appendChild(script2);
+
+      var script3 = document.createElement('script');
+      script3.src = 'assets/scripts/gradientbg.js';
+      document.body.appendChild(script3);
+
+      var jqueryUI = document.createElement('script');
+      jqueryUI.src = 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js';
+      document.body.appendChild(jqueryUI);
+
+      var script4 = document.createElement('script');
+      script4.src = 'assets/scripts/jquery.easing.min.js';
+      document.body.appendChild(script4);
+
+      var script5 = document.createElement('script');
+      script5.src = 'assets/scripts/count.js';
+      document.body.appendChild(script5);
+
+    };
+  </script>
+  <script type="text/javascript" src="assets/scripts/app.js"></script>
+
+  <script type="text/javascript" src="assets/scripts/animated.js"></script>
+  <script type="text/javascript" src="assets/scripts/parallax.js"></script>
+  <script type="text/javascript" src="assets/scripts/owl.carousel.js"></script>
   <script type="text/javascript">
+    //Owl Slider
     $('.owl-carousel').owlCarousel({
       autoplay: true,
-      autoplayTimeout: 5000,
+      autoplayTimeout: 4000,
       loop: true,
       margin: 0,
       items: 1,
       center: true,
       nav: false,
       loop: true,
-      stagePadding: 10,
+      stagePadding: 0,
       mouseDrag: false,
       touchDrag: false
     })
   </script>
-  <script>
-    function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    function smoothScroll(target, duration) {
-      let targetPosition = target.getBoundingClientRect().top + window.pageYOffset; // Update to use pageYOffset
-      let startPosition = window.pageYOffset;
-      let startTime = null;
-
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        let timeElapsed = currentTime - startTime;
-        let run = easeInOutQuad(timeElapsed / duration) * (targetPosition - startPosition) + startPosition; // Update to use targetPosition
-
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-      }
-
-      requestAnimationFrame(animation);
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        let target = document.querySelector(this.getAttribute('href'));
-        smoothScroll(target, 1000);
-      });
-    });
-  </script>
-  <script>
+  <script type="text/javascript">
+    // Musik
     // Function to play audio if it's not already playing
     function playAudioOnce() {
       var audio = document.getElementById("myAudio");
       if (audio.paused) {
-        audio.play();
-        removeEventListeners(); // Remove listeners after first interaction
+        // Attempt to play audio and handle errors
+        audio.play().then(() => {
+          console.log("Audio started playing.");
+          removeEventListeners(); // Remove listeners after first interaction
+        }).catch(error => {
+          console.log("Failed to play audio:", error);
+        });
       }
     }
 
@@ -377,39 +405,58 @@
     function removeEventListeners() {
       window.removeEventListener('scroll', playAudioOnce);
       document.body.removeEventListener('click', playAudioOnce);
-      document.getElementById('hoverTarget').removeEventListener('mouseenter', playAudioOnce);
+      document.getElementById('buka').removeEventListener('mouseenter', playAudioOnce);
     }
 
-    // Add event listeners for scroll, click, and hover
-    window.addEventListener('scroll', playAudioOnce, {
-      once: true
+    // Add event listeners for scroll, click, and hover once audio is ready
+    var audio = document.getElementById("myAudio");
+    audio.addEventListener('canplaythrough', function() {
+      console.log("Audio is ready to play.");
+
+      // Add event listeners for scroll, click, and hover
+      window.addEventListener('scroll', playAudioOnce, {
+        once: true
+      });
+      document.body.addEventListener('click', playAudioOnce, {
+        once: true
+      });
+      document.getElementById('buka').addEventListener('mouseenter', playAudioOnce, {
+        once: true
+      });
     });
-    document.body.addEventListener('click', playAudioOnce, {
-      once: true
+
+    // Optional: Catch loading errors
+    audio.addEventListener('error', function() {
+      console.log("Error loading audio.");
     });
-    document.getElementById('hoverTarget').addEventListener('mouseenter', playAudioOnce, {
-      once: true
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyElements = document.querySelectorAll('.lazy-element');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Proses untuk memuat elemen
+            entry.target.classList.add('loaded');
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      lazyElements.forEach(element => {
+        observer.observe(element);
+      });
     });
   </script>
-  <script>
-    // Get the sticky div and section 2
-    var stickyDiv = document.getElementById("stickyDiv");
-    var section2 = document.querySelector(".sec-date");
+  <style>
+    .lazy-element {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
 
-    // Detect scroll event
-    window.addEventListener("scroll", function() {
-      var section2Top = section2.getBoundingClientRect().top;
-
-      // Show stickyDiv only when we reach Section 2 or beyond
-      if (section2Top <= 300) {
-        stickyDiv.style.display = "block";
-      } else {
-        stickyDiv.style.display = "none";
-      }
-    });
-  </script>
-  <script src="../scripts/parallax.js"></script>
-  <script src="../scripts/gradientbg.js"></script>
+    .lazy-element.loaded {
+      opacity: 1;
+    }
+  </style>
 </body>
 
 </html>
